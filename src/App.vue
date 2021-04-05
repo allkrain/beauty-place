@@ -1,30 +1,53 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Header></Header>
+  <router-view />
 </template>
 
+<script>
+import Header from '@/components/Header.vue';
+
+export default {
+  name: 'App',
+  components: { Header },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~@/assets/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("~@/assets/fonts/Montserrat-Regular.woff") format("woff");
 }
 
-#nav {
-  padding: 30px;
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("~@/assets/fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("~@/assets/fonts/Montserrat-Medium.woff") format("woff");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  background-color: #131313;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.container {
+  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 20px;
   }
 }
 </style>
