@@ -31,6 +31,15 @@ export default {
     url("~@/assets/fonts/Montserrat-Medium.woff") format("woff");
 }
 
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("~@/assets/fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("~@/assets/fonts/Montserrat-Bold.woff") format("woff");
+}
+
 body {
   padding: 0;
   margin: 0;

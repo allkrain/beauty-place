@@ -8,6 +8,7 @@
       <div class="products">
         <Product
           v-for="item in productList"
+          :id="item.id"
           :key="item.id"
           :image="item.image"
           :alt="item.alt"

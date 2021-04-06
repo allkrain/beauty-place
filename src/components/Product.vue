@@ -9,15 +9,27 @@
     <p>{{describe}}</p>
     <div class="product__data">
       <div class="product__price">{{`$${price}`}}</div>
-      <div class="product__sizes"></div>
+      <div class="product__sizes">
+        <CheckItem
+          v-for="(size, index) in sizes"
+          :key="index"
+          type="radio"
+          :value="size"
+          :name="`size-${id}`"
+          :valueName="size"
+        ></CheckItem>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import CheckItem from './CheckItem.vue';
+
 export default {
   name: 'product',
   props: {
+    id: String,
     image: String,
     alt: String,
     describe: String,
@@ -25,7 +37,7 @@ export default {
     price: Number,
     button: Object,
   },
-  components: {},
+  components: { CheckItem },
 };
 </script>
 
